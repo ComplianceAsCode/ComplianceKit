@@ -7,6 +7,7 @@ package version
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
 // Version is the version of the build.
@@ -19,6 +20,6 @@ var (
 
 // PrintVersion returns the version for the command version and --version flag
 func PrintVersion() {
-	fmt.Printf("%s version: %s, build: %s, date: %s\n", os.Args[0], Version, Commit, Date)
+	fmt.Printf("%s version: %s, build: %s, date: %s\n", filepath.Base(os.Args[0]), Version, Commit, Date)
 	os.Exit(0)
 }
