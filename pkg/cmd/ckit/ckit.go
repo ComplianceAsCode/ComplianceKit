@@ -12,6 +12,9 @@ import (
 	"path/filepath"
 
 	"github.com/complianceascode/compliancekit/pkg/cmd/cli/create"
+	"github.com/complianceascode/compliancekit/pkg/cmd/cli/generate"
+	"github.com/complianceascode/compliancekit/pkg/cmd/cli/repo"
+	"github.com/complianceascode/compliancekit/pkg/cmd/cli/update"
 	cliversion "github.com/complianceascode/compliancekit/pkg/cmd/cli/version"
 	"github.com/complianceascode/compliancekit/pkg/cmd/errors"
 	"github.com/complianceascode/compliancekit/version"
@@ -82,6 +85,9 @@ allows users to easily construct compliance content`,
 
 	// Add new main commands here
 	cmds.AddCommand(create.NewCmdCreate(out))
+	cmds.AddCommand(generate.NewCmdGenerate(out))
+	cmds.AddCommand(repo.NewCmdGet(out))
+	cmds.AddCommand(update.NewCmdUpdate(out))
 	cmds.AddCommand(cliversion.NewCmdVersion(out))
 	disableFlagsInUseLine(cmds)
 
